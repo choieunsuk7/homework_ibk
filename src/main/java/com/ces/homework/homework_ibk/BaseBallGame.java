@@ -42,6 +42,46 @@ public class BaseBallGame {
 
         return printMessage;
     }
+
+    public static String getBaseBallScore(String given, String intput) {
+        String printMessage = "";
+        int givenInt = Integer.parseInt(given);
+        int intputInt = Integer.parseInt(intput);
+        ArrayList<Integer> givenList = integerArrayList(givenInt);
+        ArrayList<Integer> inputList = integerArrayList(intputInt);
+
+        String res = "";
+        for(int i = 0; i < givenList.size(); i++) {
+            for(int j = 0; j < inputList.size(); j ++) {
+                if(givenList.get(i) == inputList.get(j)) {
+                    if(i == j) {
+                        res = res + "S";
+                    } else {
+                        res = res + "B";
+                    }
+                }
+            }
+        }
+
+        if(res.equals("")) {
+            System.out.println("(null)");
+        } else {
+            int sCount = countChar(res, 'S');
+            int bCount = countChar(res, 'B');
+
+            if(sCount != 0) {
+                printMessage = sCount + "S";
+            }
+            if(bCount != 0) {
+                printMessage = printMessage + bCount + "B";
+            }
+
+            System.out.println(printMessage);
+        }
+
+        return printMessage;
+    }
+
     private static int randomNumber() {
         int[] ballArr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         int[] ball3 = new int[3];
