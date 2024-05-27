@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class BaseBallGame {
 
-    public static String getScore(String given, String intput) {
+    public String getScore(String given, String intput) {
         String printMessage = "";
         int givenInt = Integer.parseInt(given);
         int intputInt = Integer.parseInt(intput);
